@@ -26,6 +26,7 @@ describe('UserController', () => {
 
   describe('POST /api/users', () => {
     beforeEach(async () => {
+      await testService.deleteContact();
       await testService.deleteUser();
     });
     it('should be rejected if request is invalid', async () => {
@@ -76,6 +77,7 @@ describe('UserController', () => {
 
   describe('POST /api/users/login', () => {
     beforeEach(async () => {
+      await testService.deleteContact();
       await testService.deleteUser();
       await testService.createUser();
     });
@@ -136,6 +138,7 @@ describe('UserController', () => {
 
   describe('GET /api/users/current', () => {
     beforeEach(async () => {
+      await testService.deleteContact();
       await testService.deleteUser();
       await testService.createUser();
     });
@@ -174,6 +177,7 @@ describe('UserController', () => {
 
   describe('PACTH /api/users/current', () => {
     beforeEach(async () => {
+      await testService.deleteContact();
       await testService.deleteUser();
       await testService.createUser();
     });
@@ -233,6 +237,7 @@ describe('UserController', () => {
 
   describe('DELETE /api/users/current', () => {
     beforeEach(async () => {
+      await testService.deleteContact();
       await testService.deleteUser();
       await testService.createUser();
     });
